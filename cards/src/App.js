@@ -1,17 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Card from './Card';
 
-function Card(props) {
+function App(props) {
   console.log(props);
+  const {image, text, link, title, picText} = props;
   return (
-    <div className="card">
-      <img src={props.image} className="card-img-top" alt={props.text} />
-      <div className="card-body">
-        {props.children}
-      </div>
-    </div>
+    <Card image={image} picText={picText}>
+      <h5 className="card-title">{title}</h5>
+      <p className="card-text">{text}</p>
+      <a href={link} className="btn btn-primary">Ссылка</a>
+    </Card>
   );
 }
 
-export default Card;
+export default App;
